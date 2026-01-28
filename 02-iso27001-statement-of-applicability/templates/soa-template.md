@@ -1,0 +1,182 @@
+# ISO 27001:2022 Statement of Applicability
+
+## Document Information
+| Field | Value |
+|-------|-------|
+| Organization | [Company Name] |
+| ISMS Scope | [Scope Description] |
+| Version | 1.0 |
+| Last Updated | [Date] |
+| Approved By | [Name/Role] |
+| Next Review | [Date] |
+
+---
+
+## Control Summary
+
+| Theme | Total | Applicable | Excluded | Implemented | Partial | Planned |
+|-------|-------|------------|----------|-------------|---------|---------|
+| 5. Organizational | 37 | | | | | |
+| 6. People | 8 | | | | | |
+| 7. Physical | 14 | | | | | |
+| 8. Technological | 34 | | | | | |
+| **TOTAL** | **93** | | | | | |
+
+---
+
+## Theme 5: Organizational Controls
+
+| Ref | Control | Applicable | Status | Justification | Evidence Ref |
+|-----|---------|------------|--------|---------------|--------------|
+| 5.1 | Policies for information security | Yes/No | Impl/Partial/Planned/NA | | |
+| 5.2 | Information security roles and responsibilities | Yes/No | | | |
+| 5.3 | Segregation of duties | Yes/No | | | |
+| 5.4 | Management responsibilities | Yes/No | | | |
+| 5.5 | Contact with authorities | Yes/No | | | |
+| 5.6 | Contact with special interest groups | Yes/No | | | |
+| 5.7 | Threat intelligence | Yes/No | | | |
+| 5.8 | Information security in project management | Yes/No | | | |
+| 5.9 | Inventory of information and other associated assets | Yes/No | | | |
+| 5.10 | Acceptable use of information and other associated assets | Yes/No | | | |
+| 5.11 | Return of assets | Yes/No | | | |
+| 5.12 | Classification of information | Yes/No | | | |
+| 5.13 | Labelling of information | Yes/No | | | |
+| 5.14 | Information transfer | Yes/No | | | |
+| 5.15 | Access control | Yes/No | | | |
+| 5.16 | Identity management | Yes/No | | | |
+| 5.17 | Authentication information | Yes/No | | | |
+| 5.18 | Access rights | Yes/No | | | |
+| 5.19 | Information security in supplier relationships | Yes/No | | | |
+| 5.20 | Addressing information security within supplier agreements | Yes/No | | | |
+| 5.21 | Managing information security in the ICT supply chain | Yes/No | | | |
+| 5.22 | Monitoring, review and change management of supplier services | Yes/No | | | |
+| 5.23 | Information security for use of cloud services | Yes/No | | | |
+| 5.24 | Information security incident management planning and preparation | Yes/No | | | |
+| 5.25 | Assessment and decision on information security events | Yes/No | | | |
+| 5.26 | Response to information security incidents | Yes/No | | | |
+| 5.27 | Learning from information security incidents | Yes/No | | | |
+| 5.28 | Collection of evidence | Yes/No | | | |
+| 5.29 | Information security during disruption | Yes/No | | | |
+| 5.30 | ICT readiness for business continuity | Yes/No | | | |
+| 5.31 | Legal, statutory, regulatory and contractual requirements | Yes/No | | | |
+| 5.32 | Intellectual property rights | Yes/No | | | |
+| 5.33 | Protection of records | Yes/No | | | |
+| 5.34 | Privacy and protection of PII | Yes/No | | | |
+| 5.35 | Independent review of information security | Yes/No | | | |
+| 5.36 | Compliance with policies, rules and standards for information security | Yes/No | | | |
+| 5.37 | Documented operating procedures | Yes/No | | | |
+
+---
+
+## Theme 6: People Controls
+
+| Ref | Control | Applicable | Status | Justification | Evidence Ref |
+|-----|---------|------------|--------|---------------|--------------|
+| 6.1 | Screening | Yes/No | | | |
+| 6.2 | Terms and conditions of employment | Yes/No | | | |
+| 6.3 | Information security awareness, education and training | Yes/No | | | |
+| 6.4 | Disciplinary process | Yes/No | | | |
+| 6.5 | Responsibilities after termination or change of employment | Yes/No | | | |
+| 6.6 | Confidentiality or non-disclosure agreements | Yes/No | | | |
+| 6.7 | Remote working | Yes/No | | | |
+| 6.8 | Information security event reporting | Yes/No | | | |
+
+---
+
+## Theme 7: Physical Controls
+
+| Ref | Control | Applicable | Status | Justification | Evidence Ref |
+|-----|---------|------------|--------|---------------|--------------|
+| 7.1 | Physical security perimeters | Yes/No | | | |
+| 7.2 | Physical entry | Yes/No | | | |
+| 7.3 | Securing offices, rooms and facilities | Yes/No | | | |
+| 7.4 | Physical security monitoring | Yes/No | | | |
+| 7.5 | Protecting against physical and environmental threats | Yes/No | | | |
+| 7.6 | Working in secure areas | Yes/No | | | |
+| 7.7 | Clear desk and clear screen | Yes/No | | | |
+| 7.8 | Equipment siting and protection | Yes/No | | | |
+| 7.9 | Security of assets off-premises | Yes/No | | | |
+| 7.10 | Storage media | Yes/No | | | |
+| 7.11 | Supporting utilities | Yes/No | | | |
+| 7.12 | Cabling security | Yes/No | | | |
+| 7.13 | Equipment maintenance | Yes/No | | | |
+| 7.14 | Secure disposal or re-use of equipment | Yes/No | | | |
+
+---
+
+## Theme 8: Technological Controls
+
+| Ref | Control | Applicable | Status | Justification | Evidence Ref |
+|-----|---------|------------|--------|---------------|--------------|
+| 8.1 | User endpoint devices | Yes/No | | | |
+| 8.2 | Privileged access rights | Yes/No | | | |
+| 8.3 | Information access restriction | Yes/No | | | |
+| 8.4 | Access to source code | Yes/No | | | |
+| 8.5 | Secure authentication | Yes/No | | | |
+| 8.6 | Capacity management | Yes/No | | | |
+| 8.7 | Protection against malware | Yes/No | | | |
+| 8.8 | Management of technical vulnerabilities | Yes/No | | | |
+| 8.9 | Configuration management | Yes/No | | | |
+| 8.10 | Information deletion | Yes/No | | | |
+| 8.11 | Data masking | Yes/No | | | |
+| 8.12 | Data leakage prevention | Yes/No | | | |
+| 8.13 | Information backup | Yes/No | | | |
+| 8.14 | Redundancy of information processing facilities | Yes/No | | | |
+| 8.15 | Logging | Yes/No | | | |
+| 8.16 | Monitoring activities | Yes/No | | | |
+| 8.17 | Clock synchronization | Yes/No | | | |
+| 8.18 | Use of privileged utility programs | Yes/No | | | |
+| 8.19 | Installation of software on operational systems | Yes/No | | | |
+| 8.20 | Networks security | Yes/No | | | |
+| 8.21 | Security of network services | Yes/No | | | |
+| 8.22 | Segregation of networks | Yes/No | | | |
+| 8.23 | Web filtering | Yes/No | | | |
+| 8.24 | Use of cryptography | Yes/No | | | |
+| 8.25 | Secure development life cycle | Yes/No | | | |
+| 8.26 | Application security requirements | Yes/No | | | |
+| 8.27 | Secure system architecture and engineering principles | Yes/No | | | |
+| 8.28 | Secure coding | Yes/No | | | |
+| 8.29 | Security testing in development and acceptance | Yes/No | | | |
+| 8.30 | Outsourced development | Yes/No | | | |
+| 8.31 | Separation of development, test and production environments | Yes/No | | | |
+| 8.32 | Change management | Yes/No | | | |
+| 8.33 | Test information | Yes/No | | | |
+| 8.34 | Protection of information systems during audit testing | Yes/No | | | |
+
+---
+
+## Exclusions Summary
+
+| Control Ref | Control Name | Reason for Exclusion | Alternative Measure |
+|-------------|--------------|---------------------|---------------------|
+| | | | |
+| | | | |
+| | | | |
+
+---
+
+## Risk-to-Control Traceability
+
+| Risk ID | Risk Description | Addressing Controls |
+|---------|------------------|---------------------|
+| | | |
+| | | |
+| | | |
+
+---
+
+## Version History
+
+| Version | Date | Author | Changes |
+|---------|------|--------|---------|
+| 1.0 | | | Initial version |
+
+---
+
+## Approval Signatures
+
+| Role | Name | Date | Signature |
+|------|------|------|-----------|
+| Information Security Manager | | | |
+| Risk Owner | | | |
+| Management Representative | | | |
