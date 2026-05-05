@@ -1,4 +1,4 @@
-# Project 05: Writing a Risk Acceptance for a Security Gap
+Risk Acceptance for $2B Security Gap
 
 ## Overview
 
@@ -51,8 +51,8 @@ The security team has identified that the company's legacy payment reconciliatio
 5. Replacing the system would require 12-18 months of development
 
 **Technical Details:**
-- System: PaymentReconciler v3.2 (internal application)
-- Database: Oracle 12c with PCI cardholder data
+- System: PaymentReconciler v3.2 (internal application) <-- CHANGING
+- Database: Oracle 12c with PCI cardholder data <-- CHANGING
 - Authentication: Static username/password stored in config file
 - Logging: Application logs exist, but no database query logging
 - Network: System sits in PCI CDE
@@ -65,11 +65,9 @@ The security team has identified that the company's legacy payment reconciliatio
 
 ---
 
-## What You Need to Do
+### Phase 1: Understanding the Risk
 
-### Phase 1: Understand the Risk (Not Just the Vulnerability)
-
-**Task:** Translate the technical finding into business risk.
+Translating technical findings into business risk.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -80,19 +78,19 @@ The security team has identified that the company's legacy payment reconciliatio
 │   ─────────────────────────             ───────────────                     │
 │                                                                             │
 │   Shared service account                Unauthorized access to $2B in       │
-│                                         transaction data                    │
+│                                         transaction data  <-- CHANGING                   │
 │                                                                             │
 │   No password rotation                  If password is compromised,         │
 │                                         attacker has 18+ months of access   │
 │                                                                             │
 │   15 people know password               Any of 15 people (or their          │
 │                                         compromised accounts) could         │
-│                                         access the database                 │
+│                                         access the database <-- CHANGING                │
 │                                                                             │
 │   No query logging                      Breach may go undetected;           │
 │                                         forensics impossible                │
 │                                                                             │
-│   DB admin privileges                   Attacker could modify/delete        │
+│   DB admin privileges  <-- CHANGING                 Attacker could modify/delete        │
 │                                         financial records                   │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
@@ -100,23 +98,9 @@ The security team has identified that the company's legacy payment reconciliatio
 
 ### Phase 2: Assess Likelihood and Impact
 
-**Task:** Provide specific, evidence-based assessment.
+Providing specific, evidence-based assessment.
 
-**BAD Assessment (Vague):**
-```
-Likelihood: Low
-Impact: High
-Risk Rating: Medium
 
-This is bad because:
-- No evidence for "Low" likelihood
-- No definition of "High" impact
-- "Medium" is meaningless without context
-```
-
-**GOOD Assessment (Specific):**
-
-```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         LIKELIHOOD ASSESSMENT                               │
 ├─────────────────────────────────────────────────────────────────────────────┤
@@ -129,17 +113,17 @@ This is bad because:
 │   - Payment processors frequently targeted                                  │
 │   - 3 competitors breached in past 24 months                                │
 │                                                                             │
-│   Attack Complexity                     LOW (Easy to exploit)               │
+│   Attack Complexity                     LOW (Easy to exploit)     <-- CHANGING           │
 │   - Password may be in source control                                       │
 │   - 15 people know it (social engineering surface)                          │
 │   - No MFA, no IP restrictions                                              │
 │                                                                             │
-│   Detection Capability                  LOW                                 │
+│   Detection Capability                  LOW                       <-- CHANGING           │
 │   - No query logging                                                        │
 │   - Legitimate and malicious access look identical                          │
 │   - Could exfiltrate data without triggering alerts                         │
 │                                                                             │
-│   Historical Incidents                  NONE KNOWN                          │
+│   Historical Incidents                  NONE KNOWN                 <-- CHANGING          │
 │   - No known compromise of this system                                      │
 │   - However, we would not detect a sophisticated breach                     │
 │                                                                             │
@@ -153,35 +137,35 @@ This is bad because:
 ├─────────────────────────────────────────────────────────────────────────────┤
 │                                                                             │
 │   IMPACT CATEGORY           POTENTIAL CONSEQUENCE            ESTIMATED COST │
-│   ───────────────           ──────────────────────           ───────────── │
+│   ───────────────           ──────────────────────           ─────────────  │
 │                                                                             │
-│   Data Breach               Exposure of cardholder data      $5-15M        │
+│   Data Breach               Exposure of cardholder data      $5-15M         │
 │                             (PCI penalties + notification)                  │
 │                                                                             │
-│   Financial Fraud           Manipulation of transaction      $1-10M        │
-│                             records                          (Depends on   │
-│                                                              detection)    │
+│   Financial Fraud           Manipulation of transaction      $1-10M         │
+│                             records                          (Depends on    │
+│                                                              detection)     │
 │                                                                             │
-│   Regulatory Action         PCI DSS non-compliance finding   $500K-5M      │
-│                             SOC 2 qualified opinion          (Fines +      │
-│                                                              remediation)  │
+│   Regulatory Action         PCI DSS non-compliance finding   $500K-5M       │
+│                             and SOC 2 qualified opinion      (Fines +       │
+│                                                              remediation)   │
 │                                                                             │
-│   Reputation                Customer loss, media coverage    $2-20M        │
-│                             (B2B customers leave)            (Hard to      │
-│                                                              quantify)     │
+│   Reputation                Customer loss, media coverage    $2-20M         │
+│                             (B2B customers leave)            (Hard to       │
+│                                                              quantify)      │
 │                                                                             │
-│   Business Disruption       System taken offline for         $100K/day     │
-│                             forensics                                      │
+│   Business Disruption       System taken offline for         $100K/day      │
+│                             forensics                                       │
 │                                                                             │
-│   TOTAL POTENTIAL IMPACT: $8-50M (depending on severity)                   │
-│   MOST LIKELY SCENARIO: $10-15M                                            │
+│   TOTAL POTENTIAL IMPACT: $8-50M (depending on severity)                    │
+│   MOST LIKELY SCENARIO: $10-15M  (assuming <-- MUST FILL IN)                                            │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Phase 3: Evaluate Compensating Controls
 
-**Task:** Honestly assess what protection exists today.
+Assessing what protection currently exists.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -227,7 +211,7 @@ This is bad because:
 
 ### Phase 4: Present Options to Business
 
-**Task:** Give decision-makers real choices, not a single path.
+Giving decision-makers real choices.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -241,7 +225,7 @@ This is bad because:
 │   - Full audit logging                                                      │
 │   - Automated password rotation                                             │
 │                                                                             │
-│   Cost: $800K-1.2M (development + migration)                               │
+│   Cost: $800K-1.2M (development + migration)                                │
 │   Timeline: 12-18 months                                                    │
 │   Residual Risk: LOW                                                        │
 │                                                                             │
@@ -255,7 +239,7 @@ This is bad because:
 │                                                                             │
 │   Cost: $150K (tooling + configuration)                                     │
 │   Timeline: 3 months                                                        │
-│   Residual Risk: MEDIUM (still shared account, still no MFA)               │
+│   Residual Risk: MEDIUM (still shared account, still no MFA)                │
 │                                                                             │
 │   OPTION C: ACCEPT RISK                                                     │
 │   ───────────────────────                                                   │
@@ -281,18 +265,18 @@ This is bad because:
 
 ### Phase 5: Write the Risk Acceptance Document
 
-**Task:** Create a formal document that a CFO would sign.
+Creating a formal document for CFO signature
 
 **Document Structure:**
 
 ```markdown
 # RISK ACCEPTANCE DOCUMENT
 
-## Risk ID: RA-2026-017
-## System: PaymentReconciler v3.2
-## Risk Owner: [CFO Name]
-## Prepared By: [Your Name], GRC
-## Date: [Date]
+## Risk ID: RA-2026-017 <-- CHANGING 
+## System: PaymentReconciler v3.2 <-- CHANGING 
+## Risk Owner: [CFO Name] <-- CHANGING 
+## Prepared By: Autumn Tompkin, GRC
+## Date: May 5th, 2026
 
 ---
 
@@ -301,7 +285,7 @@ This is bad because:
 This document requests formal acceptance of security risk associated with the
 PaymentReconciler system's authentication architecture. The system uses a shared
 service account with database administrator privileges, known to 15 employees,
-with a password unchanged for 18 months.
+with a password unchanged for 18 months. <-- CHANGING 
 
 **Recommendation:** Option D (Accept with Minimal Improvements) while allocating
 budget for full remediation in FY2027.
