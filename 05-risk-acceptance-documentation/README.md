@@ -1,39 +1,4 @@
-Risk Acceptance for $2B Security Gap
-
-## Overview
-
-Every organization has risks it chooses to live with. The difference between strong and weak GRC is whether those decisions are **intentional and defensible**. This project requires you to write a risk acceptance that enables informed decision-making, not one that hides behind jargon or vague language.
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    RISK ACCEPTANCE: FAILURE MODES                           │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   COMMON FAILURES                       WHAT SHOULD HAPPEN                  │
-│   ───────────────                       ────────────────────                │
-│                                                                             │
-│   Drowning in technical jargon          Plain language explanation          │
-│   "Credential stuffing attack           "Attackers may guess passwords      │
-│   surface with lateral movement         and access other systems"           │
-│   potential"                                                                │
-│                                                                             │
-│   Hiding behind vague language          Specific, evidenced statements      │
-│   "Risk is low"                         "3 similar incidents in industry    │
-│   "Controls are in place"               last year, each cost $2-5M"         │
-│                                                                             │
-│   Selling the decision                  Honest trade-off explanation        │
-│   Downplays impact, inflates            States what could go wrong,         │
-│   control effectiveness                 acknowledges uncertainty            │
-│                                                                             │
-│   Treating it as permission slip        Treating it as business decision    │
-│   Security "approving" the risk         Business OWNING the risk            │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## The Scenario
+## Risk Acceptance for $2B Payment System Security Gap
 
 **Company:** FinanceFlow Inc.
 **Industry:** B2B Payment Processing
@@ -42,26 +7,27 @@ Every organization has risks it chooses to live with. The difference between str
 
 ### The Security Gap
 
-The security team has identified that the company's legacy payment reconciliation system:
+The company's legacy payment reconciliation system:
 
-1. Uses a shared service account with database admin privileges
-2. The password has not been rotated in 18 months
-3. 15 team members know the password
-4. The system processes $2B in transactions annually
-5. Replacing the system would require 12-18 months of development
+1. Processes $2B in transactions annually
+2. Uses a shared service account with database administrator privileges
+3. Is accessible to 15 team members who know the password for the shared service account
+4. Has not had the password rotated in 18 months
+5. Would require 12–18 months to replace
 
 **Technical Details:**
-- System: PaymentReconciler v3.2 (internal application) <-- CHANGING
-- Database: Oracle 12c with PCI cardholder data <-- CHANGING
-- Authentication: Static username/password stored in config file
-- Logging: Application logs exist, but no database query logging
-- Network: System sits in PCI CDE
+- System: PaymentReconciler v3.2 (internal application)
+- Database: Oracle 12c (stores cardholder data subject to PCI DSS requirements)  
+- Authentication: Uses a static username and password stored in configuration files  
+- Monitoring: Application activity is logged, but database-level activity is not tracked
+- Environment: Operates within the cardholder data environment (CDE), 
+               where sensitive payment data is stored and processed
 
 **Business Context:**
-- Finance team relies on this system for daily operations
-- No budget allocated for replacement in current fiscal year
-- Previous attempt to modernize failed 2 years ago
-- System owner is the CFO
+- The finance team relies on this system for daily operations
+- No budget is allocated for replacement in current fiscal year
+- A previous attempt to modernize the system failed 2 years ago
+- The system is owned by the CFO  
 
 ---
 
@@ -70,30 +36,36 @@ The security team has identified that the company's legacy payment reconciliatio
 Translating technical findings into business risk.
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    VULNERABILITY VS RISK                                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   VULNERABILITY (Technical)             RISK (Business)                     │
-│   ─────────────────────────             ───────────────                     │
-│                                                                             │
-│   Shared service account                Unauthorized access to $2B in       │
-│                                         transaction data  <-- CHANGING                   │
-│                                                                             │
-│   No password rotation                  If password is compromised,         │
-│                                         attacker has 18+ months of access   │
-│                                                                             │
-│   15 people know password               Any of 15 people (or their          │
-│                                         compromised accounts) could         │
-│                                         access the database <-- CHANGING                │
-│                                                                             │
-│   No query logging                      Breach may go undetected;           │
-│                                         forensics impossible                │
-│                                                                             │
-│   DB admin privileges  <-- CHANGING                 Attacker could modify/delete        │
-│                                         financial records                   │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────────┐
+│                              VULNERABILITY VS RISK                                   │
+├──────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                      │    
+│   VULNERABILITY (Technical)             RISK (Business)                              │   
+│   ─────────────────────────             ───────────────                              |
+│                                                                                      │
+│   Shared service account                Company cannot determine who alters or       │
+│                                         deletes data; Non-compliant with PCI DSS,    |
+|                                         creating risk of fines and potential         |
+|                                         loss of payment processing capability.       |
+│                                                                                      |
+|                                                                                      │
+│   Broad password exposure               Increases likelihood of compromise;          |
+|   (15 users know credentials)           A single phishing attack could grant         |    |                                         access to $2B in transaction data.           |
+|                                                                                      |    
+│                                                                                      │
+│   No password rotation                  If password is compromised,                  |
+|                                         attacker has 18+ months of access.           |
+|                                         Also non-compliant with PCI DSS.             |
+|                                                                                      |
+│                                                                                      │
+│   No database query logging             Data breach may go undetected;               │
+│                                         forensics impossible.                        │
+│                                                                                      |
+|                                                                                      │
+│   Excessive DB admin privileges         Too many users have full access;             │
+│                                         Attackers who gain entry will also have      │
+│                                         full access to alter or delete $2B in financial records. │
+└──────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Phase 2: Assess Likelihood and Impact
