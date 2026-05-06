@@ -50,7 +50,7 @@ Translating technical findings into business risk.
 │                                         capability.                                  |
 |                                                                                      │
 │   Broad password exposure               Increases likelihood of compromise;          |
-|   (15 users know credentials)           A single phishing attack could grant         |    |                                         access to $2B in transaction data.           |
+|   (15 users know credentials)           A single phishing attack could grant         |                                          |                                         access to $2B in transaction data.           |
 |                                                                                      |    
 │                                                                                      │
 │   No password rotation                  If password is compromised,                  |
@@ -71,6 +71,8 @@ Translating technical findings into business risk.
 ### Phase 2: Assess Likelihood and Impact
 
 Providing specific, evidence-based assessment.
+
+```
 
 ┌──────────────────────────────────────────────────────────────────────────────────────┐
 │                              LIKELIHOOD ASSESSMENT                                   │
@@ -98,11 +100,13 @@ Providing specific, evidence-based assessment.
 │   Historical Incidents                                   NONE KNOWN                  │
 │   - No known compromise of this system                                               │
 │   - However, the company would not detect                                            │
-│     a sophisticated breach                                                           |    │                                                                                      |
+│     a sophisticated breach                                                           |                                     
 │   OVERALL LIKELIHOOD: MODERATE-HIGH                                                  │
 │   (Conditions favor eventual compromise despite no confirmed incidents)              │
 │                                                                                      │
 └──────────────────────────────────────────────────────────────────────────────────────┘
+
+```
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                         IMPACT ASSESSMENT                                   │
