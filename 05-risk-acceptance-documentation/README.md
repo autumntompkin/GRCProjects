@@ -101,7 +101,8 @@ Providing specific, evidence-based assessment.
 │   - No known compromise of this system                                               │
 │   - However, the company would not detect                                            │
 │     a sophisticated breach                                                           |                                     
-│   OVERALL LIKELIHOOD: MODERATE-HIGH                                                  │
+│                                                                                      |
+|   OVERALL LIKELIHOOD: MODERATE-HIGH                                                  │
 │   (Conditions favor eventual compromise despite no confirmed incidents)              │
 │                                                                                      │
 └──────────────────────────────────────────────────────────────────────────────────────┘
@@ -133,7 +134,8 @@ Providing specific, evidence-based assessment.
 │                                                                             │
 │   Business Disruption       System taken offline for         $100K/day      │
 │                             forensics                                       │
-│                                                                             │
+│                                                                             |
+|                                                                             │
 │   TOTAL POTENTIAL IMPACT: $8-50M (depending on severity)                    │
 │   MOST LIKELY SCENARIO: $10-15M  (assuming delayed detection and            |
 |                                   moderate data exposure)                   │
