@@ -1,9 +1,9 @@
 ## Risk Acceptance for $2B Payment System Security Gap
 
-**Company:** FinanceFlow Inc.
-**Industry:** B2B Payment Processing
-**Size:** 400 employees, $50M ARR
-**Compliance:** SOC 2 Type II, PCI DSS Level 2
+- **Company:** FinanceFlow Inc.
+- **Industry:** B2B Payment Processing
+- **Size:** 400 employees, $50M ARR
+- **Compliance:** SOC 2 Type II, PCI DSS Level 2
 
 ### The Security Gap
 
